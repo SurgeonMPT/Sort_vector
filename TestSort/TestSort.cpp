@@ -21,6 +21,28 @@ struct Info {
     Date date;
 };
 
+//Заполнение нового Info
+Info fillInfo()
+{
+    Info info;
+    system("cls");
+
+    cout << "Введите ФИО => ";
+    cin >> info.surname;
+    cin >> info.name;
+    cin >> info.lastname;
+
+    cout << "Введите Телефон => ";
+    cin >> info.phone;
+
+    cout << "Введите дату рождения => ";
+    cin >> info.date.day;
+    cin >> info.date.month;
+    cin >> info.date.year;
+
+    return info;
+}
+
 //Сортировка вектора От а до я. От 1 до 9 (По номеру ASCII символа)
 vector<Info> sortInfo(vector<Info> info_s)
 {
@@ -138,14 +160,7 @@ string addInfo()
     }
     in.close();
 
-    cout << "Введите ФИО => ";
-    cin >> info.surname >> info.name >> info.lastname;
-
-    cout << "Введите Телефон => ";
-    cin >> info.phone;
-
-    cout << "Введите дату рождения => ";
-    cin >> info.date.day >> info.date.month >> info.date.year;
+    info = fillInfo();
 
     info_s.push_back(info);
 
